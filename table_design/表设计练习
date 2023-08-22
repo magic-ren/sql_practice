@@ -1,0 +1,55 @@
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>约束>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+CREATE TABLE emp (
+  id INT , -- 员工id，主键且自增长
+  ename VARCHAR(50), -- 员工姓名，非空并且唯一
+  joindate DATE  , -- 入职日期，非空
+  salary DOUBLE(7,2)  , -- 工资，非空
+  bonus DOUBLE(7,2)  -- 奖金，如果没有奖金默认为0
+
+);
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>外键>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+-- 部门表
+CREATE TABLE dept(
+	id int primary key auto_increment,
+	dep_name varchar(20),
+	addr varchar(20)
+);
+-- 员工表
+CREATE TABLE emp(
+	id int primary key auto_increment,
+	name varchar(20),
+	age int,
+	dep_id int,
+
+	-- 添加外键 dep_id,关联 dept 表的id主键，外键名fk_emp_dept
+
+
+);
+
+-- 删除外键fk_emp_dept
+
+-- 建完表后，添加外键fk_emp_dept
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>表关系>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+-- 订单表
+CREATE TABLE tb_order(
+	id int primary key auto_increment,
+	payment double(10,2),
+	payment_type TINYINT,
+	status TINYINT
+);
+
+-- 商品表
+CREATE TABLE tb_goods(
+	id int primary key auto_increment,
+	title varchar(100),
+	price double(10,2)
+);
+实现订单和商品的多对多的关系
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>综合练习>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+豆瓣页面设计表关系练习（见"数据库设计案例.md"）
